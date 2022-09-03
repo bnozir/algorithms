@@ -1,25 +1,25 @@
 package stack
 
-type Stack struct {
-	elements []int
+type StackString struct {
+	elements []string
 }
 
-func (s *Stack) Push(elem int) {
+func (s *StackString) Push(elem string) {
 	s.elements = append(s.elements, elem)
 }
 
-func (s *Stack) Empty() bool {
+func (s *StackString) Empty() bool {
 	return len(s.elements) == 0
 }
 
-func (s *Stack) Top() (int, bool) {
+func (s *StackString) Top() (string, bool) {
 	if s.Empty() {
-		return 0, false
+		return "", false
 	}
 	return s.elements[len(s.elements)-1], true
 }
 
-func (s *Stack) Pop() (int, bool) {
+func (s *StackString) Pop() (string, bool) {
 	elem, ok := s.Top()
 	if !ok {
 		return elem, ok
